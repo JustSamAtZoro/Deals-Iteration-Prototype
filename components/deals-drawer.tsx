@@ -64,10 +64,10 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
         }`}
       >
         <div className="p-6 h-full flex flex-col">
-          <div className="flex justify-between items-start mb-6">
+          <div className="flex justify-between items-start mb-1">
             <div>
               <h2 className="text-xl font-bold">Enjoy everyday savings</h2>
-              <p className="text-sm text-gray-600 mb-6">Shop our ongoing site-wide promotions</p>
+              <p className="text-sm text-gray-600 mb-4">Shop our ongoing site-wide promotions</p>
             </div>
             <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
               <X className="h-5 w-5" />
@@ -83,7 +83,7 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
                   <span className="mr-1">1</span>day left!
                 </div>
               </div>
-              <div className="flex items-center">
+                <div className="flex items-start">
                 <div className="flex-shrink-0 bg-black text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
                   <div className="text-center">
                     <div className="text-lg font-bold">20%</div>
@@ -112,7 +112,7 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
 
             {/* Deal 2 */}
             <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors space-y-2">
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="flex-shrink-0 bg-[#D24600] text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
                   <div className="text-center">
                     <div className="text-lg font-bold">10%</div>
@@ -167,7 +167,7 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
 
             {/* Closeout Savings */}
             <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
                   <Image src="/closeouts.png" alt="Closeouts" width={48} height={48} className="rounded-full" />
                 </div>
