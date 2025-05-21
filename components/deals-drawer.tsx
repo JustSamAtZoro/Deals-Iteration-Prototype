@@ -65,7 +65,9 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
       >
         <div className="p-6 h-full flex flex-col">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold">Limited Time Deals</h2>
+          <h2 className="text-xl font-bold">Enjoy everyday savings</h2>
+          <p className="text-sm text-gray-600 mb-6">Shop our ongoing site-wide promotions</p>
+
             <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
               <X className="h-5 w-5" />
             </button>
@@ -136,37 +138,31 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
               </div>
             </Link>
 
-            {/* Everyday Savings Section */}
-            <div className="mt-8">
-              <h3 className="text-xl font-bold">Enjoy everyday savings</h3>
-              <p className="text-sm text-gray-600 mb-6">Shop our ongoing site-wide promotions</p>
-
-              {/* Special Offers */}
-              <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 mb-4 hover:bg-gray-200 transition-colors">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 mr-3">
-                    <Image src="/special-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Special offers from top brands</h3>
-                    <p className="text-sm">Shop special deals on tools & business supplies. No code needed!</p>
-                  </div>
+            {/* Special Offers */}
+            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 mb-4 hover:bg-gray-200 transition-colors">
+              <div className="flex items-center">
+                <div className="flex-shrink-0 mr-3">
+                  <Image src="/special-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
                 </div>
-              </Link>
-
-              {/* Closeout Savings */}
-              <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 mr-3">
-                    <Image src="/closeouts.png" alt="Closeouts" width={48} height={48} className="rounded-full" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Closeout Savings</h3>
-                    <p className="text-sm">Shop these great deals before they're gone. No code needed!</p>
-                  </div>
+                <div>
+                  <h3 className="font-semibold">Special offers from top brands</h3>
+                  <p className="text-sm">Shop special deals on tools & business supplies. No code needed!</p>
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
+
+            {/* Closeout Savings */}
+            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
+              <div className="flex items-center">
+                <div className="flex-shrink-0 mr-3">
+                  <Image src="/closeouts.png" alt="Closeouts" width={48} height={48} className="rounded-full" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Closeout Savings</h3>
+                  <p className="text-sm">Shop these great deals before they're gone. No code needed!</p>
+                </div>
+              </div>
+            </Link>
 
             {/* View All Button */}
             <div className="mt-5">
