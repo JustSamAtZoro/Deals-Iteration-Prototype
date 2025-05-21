@@ -141,13 +141,26 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
 
             {/* Special Offers */}
             <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 mb-4 hover:bg-gray-200 transition-colors">
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
-                  <Image src="/special-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
+                  <Image src="/weekly-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Special offers from top brands</h3>
-                  <p className="text-sm">Shop special deals on tools & business supplies. No code needed!</p>
+                  <h3 className="font-semibold">15% off electrical supplies</h3>
+                  <p className="text-sm mb-1">Copy and paste code at checkout:</p>
+                  <div className="flex items-center">
+                    <span className="text-[#D24600] font-bold mr-2">ESPMWD595</span>
+                    <button
+                      onClick={e => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        copyToClipboard("ESPMWD595");
+                      }}
+                      className="text-gray-500 hover:text-gray-700"
+                    >
+                      <Copy className="h-4 w-4" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </Link>
