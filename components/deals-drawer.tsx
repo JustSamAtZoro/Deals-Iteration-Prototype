@@ -1,9 +1,10 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { X, Copy } from "lucide-react"
+import { X, Copy, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 interface DealsDrawerProps {
   isOpen: boolean
@@ -29,15 +30,11 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside)
       document.addEventListener("keydown", handleEscapeKey)
-      // Remove this line to allow scrolling
-      // document.body.style.overflow = "hidden"
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
       document.removeEventListener("keydown", handleEscapeKey)
-      // Remove this line as well
-      // document.body.style.overflow = ""
     }
   }, [isOpen, onClose])
 
@@ -62,13 +59,13 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
       {/* Drawer */}
       <div
         ref={drawerRef}
-        className={`fixed w-full max-w-sm bg-gray-100 h-[calc(100vh-64px)] top-[64px] pointer-events-auto transform transition-transform duration-800 ease-in-out ${
+        className={`fixed w-full max-w-sm bg-white h-[calc(100vh-64px)] top-[64px] pointer-events-auto transform transition-transform duration-800 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-6 h-full flex flex-col">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold">Exclusive Deals</h2>
+            <h2 className="text-xl font-bold">Limited Time Deals</h2>
             <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
               <X className="h-5 w-5" />
             </button>
@@ -76,58 +73,114 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
 
           <div className="space-y-4 flex-grow">
             {/* Deal 1 */}
-            <div className="bg-white rounded-md p-4 border border-gray-200">
-              <h3 className="text-[#0a3751] font-semibold mb-1">$5 off when you spend $50 or more</h3>
-              <p className="text-sm mb-1">Copy and paste code at checkout:</p>
-              <div className="flex items-center">
-                <span className="text-[#ff6d00] font-bold mr-2">ADVH77629</span>
-                <button onClick={() => copyToClipboard("ADVH77629")} className="text-gray-500 hover:text-gray-700">
-                  <Copy className="h-4 w-4" />
-                </button>
+            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
+              <div className="flex items-center mb-2">
+                <div className="bg-black text-white text-xs px-3 py-1 rounded-full flex items-center">
+                  <Clock className="w-3 h-3 mr-1" />
+                  <span className="mr-1">1</span>day left!
+                </div>
               </div>
-            </div>
+              <div className="flex items-center">
+                <div className="flex-shrink-0 bg-black text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
+                  <div className="text-center">
+                    <div className="text-lg font-bold">15%</div>
+                    <div className="text-xs -mt-1">Off</div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Save 15% on pumps & supplies</h3>
+                  <p className="text-sm mb-1">Copy and paste code at checkout:</p>
+                  <div className="flex items-center">
+                    <span className="text-[#D24600] font-bold mr-2">ADVH77629</span>
+                    <button
+                      onClick={e => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        copyToClipboard("ADVH77629");
+                      }}
+                      className="text-gray-500 hover:text-gray-700"
+                    >
+                      <Copy className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Link>
 
             {/* Deal 2 */}
-            <div className="bg-white rounded-md p-4 border border-gray-200">
-              <h3 className="text-[#0a3751] font-semibold mb-1">20% off your entire order</h3>
-              <p className="text-sm mb-1">Copy and paste code at checkout:</p>
+            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors space-y-2">
               <div className="flex items-center">
-                <span className="text-[#ff6d00] font-bold mr-2">BMDN88FTH25</span>
-                <button onClick={() => copyToClipboard("BMDN88FTH25")} className="text-gray-500 hover:text-gray-700">
-                  <Copy className="h-4 w-4" />
-                </button>
+                <div className="flex-shrink-0 bg-[#D24600] text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
+                  <div className="text-center">
+                    <div className="text-lg font-bold">10%</div>
+                    <div className="text-xs -mt-1">Off</div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Milwaukee Mechanics Tools*</h3>
+                  <p className="text-sm mb-1">Copy and paste code at checkout:</p>
+                  <div className="flex items-center">
+                    <span className="text-[#D24600] font-bold mr-2">MMTAF526</span>
+                    <button
+                      onClick={e => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        copyToClipboard("MMTAF526");
+                      }}
+                      className="text-gray-500 hover:text-gray-700"
+                    >
+                      <Copy className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Link>
 
             {/* Everyday Savings Section */}
             <div className="mt-8">
-              <h3 className="text-xl font-bold mb-1">Enjoy everyday savings</h3>
-              <p className="text-sm mb-4">Shop our ongoing site-wide promotions</p>
+              <h3 className="text-xl font-bold">Enjoy everyday savings</h3>
+              <p className="text-sm text-gray-600 mb-6">Shop our ongoing site-wide promotions</p>
 
-              {/* Promotion */}
-              <div className="bg-white rounded-md p-4 border border-gray-200">
-                <h3 className="text-[#0a3751] font-semibold mb-1">10% Off janitorial and sanitation</h3>
-                <p className="text-sm">
-                  Rules & Restrictions apply. Offer ends 02/09/25 at 11:59pm CT.{" "}
-                  <Link href="/deals" className="text-blue-600 hover:underline">
-                    See offer
-                  </Link>
-                </p>
-              </div>
+              {/* Special Offers */}
+              <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 mb-4 hover:bg-gray-200 transition-colors">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 mr-3">
+                    <Image src="/special-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Special offers from top brands</h3>
+                    <p className="text-sm">Shop special deals on tools & business supplies. No code needed!</p>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Closeout Savings */}
+              <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 mr-3">
+                    <Image src="/closeouts.png" alt="Closeouts" width={48} height={48} className="rounded-full" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Closeout Savings</h3>
+                    <p className="text-sm">Shop these great deals before they're gone. No code needed!</p>
+                  </div>
+                </div>
+              </Link>
             </div>
 
             {/* View All Button */}
-            <div className="mt-4">
-              <a href="/deals">
-                <Button variant="outline" className="w-full border-[#0a3751] text-[#0a3751]">
-                  View all promotions
-                </Button>
-              </a>
+            <div className="mt-5">
+              <Button
+                variant="outline"
+                className="w-full border-[#0B485B] text-[#0B485B] font-bold hover:bg-[#0B485B] hover:text-white transition-colors"
+              >
+                View all promotions
+              </Button>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="mt-auto pt-4 border-t border-gray-300">
+          <div className="mt-auto pt-4 border-t border-gray-200">
             <Link href="#" className="text-blue-600 text-sm hover:underline">
               See promo rules & exclusions
             </Link>
