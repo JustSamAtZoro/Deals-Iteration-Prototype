@@ -76,20 +76,22 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
 
           <div className="space-y-4 flex-grow">
             {/* Deal 1 */}
-            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
+            <Link href="/search" className="block bg-gray-100 rounded-md p-3 border border-gray-200 hover:bg-gray-200 transition-colors">
               <div className="flex items-center mb-2">
                 <div className="bg-black text-white text-xs px-3 py-1 rounded-full flex items-center">
                   <Clock className="w-3 h-3 mr-1" />
                   <span className="mr-1">1</span>day left!
                 </div>
               </div>
-                <div className="flex items-start">
-                <div className="flex-shrink-0 bg-black text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
-                  <div className="text-center">
-                    <div className="text-lg font-bold">20%</div>
-                    <div className="text-xs -mt-1">Off</div>
-                  </div>
-                </div>
+              <div className="flex items-start">
+                {
+                //<div className="flex-shrink-0 bg-black text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
+                  //<div className="text-center">
+                    //<div className="text-lg font-bold">20%</div>
+                    //<div className="text-xs -mt-1">Off</div>
+                  //</div>
+                //</div>
+                }
                 <div>
                   <h3 className="font-semibold">Up to 20% off spring maintenance</h3>
                   <p className="text-sm mb-1">Copy and paste code at checkout:</p>
@@ -111,14 +113,16 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
             </Link>
 
             {/* Deal 2 */}
-            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors space-y-2">
+            <Link href="/search" className="block bg-gray-100 rounded-md p-3 border border-gray-200 hover:bg-gray-200 transition-colors space-y-2">
               <div className="flex items-start">
-                <div className="flex-shrink-0 bg-[#D24600] text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
-                  <div className="text-center">
-                    <div className="text-lg font-bold">10%</div>
-                    <div className="text-xs -mt-1">Off</div>
-                  </div>
-                </div>
+              {
+                //<div className="flex-shrink-0 bg-[#D24600] text-white rounded-full w-[48px] h-[48px] flex items-center justify-center mr-3">
+                  //<div className="text-center">
+                    //<div className="text-lg font-bold">10%</div>
+                    //<div className="text-xs -mt-1">Off</div>
+                  //</div>
+                //</div>
+                }
                 <div>
                   <h3 className="font-semibold">Milwaukee Mechanics Tools*</h3>
                   <p className="text-sm mb-1">Copy and paste code at checkout:</p>
@@ -140,11 +144,13 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
             </Link>
 
             {/* Special Offers */}
-            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 mb-4 hover:bg-gray-200 transition-colors">
+            <Link href="/search" className="block bg-gray-100 rounded-md p-3 border border-gray-200 mb-4 hover:bg-gray-200 transition-colors">
               <div className="flex items-start">
-                <div className="flex-shrink-0 mr-3">
-                  <Image src="/weekly-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
-                </div>
+              {
+                //  <div className="flex-shrink-0 mr-3">
+                  //<Image src="/weekly-deals.png" alt="Special Deals" width={48} height={48} className="rounded-full" />
+                //</div>
+              }
                 <div>
                   <h3 className="font-semibold">15% off electrical supplies</h3>
                   <p className="text-sm mb-1">Copy and paste code at checkout:</p>
@@ -166,11 +172,13 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
             </Link>
 
             {/* Closeout Savings */}
-            <Link href="/search" className="block bg-gray-100 rounded-md p-2 border border-gray-200 hover:bg-gray-200 transition-colors">
+            <Link href="/search" className="block bg-gray-100 rounded-md p-3 border border-gray-200 hover:bg-gray-200 transition-colors">
               <div className="flex items-start">
-                <div className="flex-shrink-0 mr-3">
-                  <Image src="/closeouts.png" alt="Closeouts" width={48} height={48} className="rounded-full" />
-                </div>
+              {
+                //<div className="flex-shrink-0 mr-3">
+                  //<Image src="/closeouts.png" alt="Closeouts" width={48} height={48} className="rounded-full" />
+                //</div>
+              }
                 <div>
                   <h3 className="font-semibold">Closeout Savings</h3>
                   <p className="text-sm">Shop these great deals before they're gone. No code needed!</p>
