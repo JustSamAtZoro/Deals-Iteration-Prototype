@@ -188,12 +188,14 @@ export function DealsDrawer({ isOpen, onClose }: DealsDrawerProps) {
 
             {/* View All Button */}
             <div className="mt-5">
-              <Button
-                variant="outline"
-                className="w-full border-[#0B485B] text-[#0B485B] font-bold hover:bg-[#0B485B] hover:text-white transition-colors"
-              >
-                View all promotions
-              </Button>
+              <Link href="/deals" className="w-full">
+                <Button
+                  variant="outline"
+                  className="w-full border-[#0B485B] text-[#0B485B] font-bold hover:bg-[#0B485B] hover:text-white transition-colors"
+                >
+                  View all promotions
+                </Button>
+              </Link>
             </div>
           </div>
 
